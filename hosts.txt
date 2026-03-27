@@ -1,0 +1,2 @@
+[webservers]
+192.168.150.1 ansible_user=admin_2

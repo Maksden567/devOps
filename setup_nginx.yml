@@ -1,0 +1,16 @@
+---
+- name: Встановлення та налаштування Nginx
+  hosts: webservers
+  become: yes
+  tasks:
+    - name: Встановлення останньої версії Nginx
+      apt:
+        name: nginx
+        state: latest
+        update_cache: yes
+
+    - name: Запуск сервісу Nginx та налаштування автозапуску
+      service:
+        name: nginx
+        state: started
+        enabled: yes
